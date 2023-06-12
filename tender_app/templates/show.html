@@ -1,0 +1,127 @@
+<!-- {% extends 'dashboard.html' %} -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Django CRUD Operations</title>
+<meta charset="utf-8">
+<!-- <meta charset="UTF-8"> -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+</head>
+
+
+<form type="get" action="." style="margin: 0">
+  <input  id="search_box" type="text" name="search_box"  placeholder="Search..." >
+  <button id="search_submit" type="submit" >Submit</button>
+</form>
+  <div style="display: flex;justify-content: space-between;">
+    <div>
+      <form action="" method="post">
+        {% csrf_token %}
+        {# This will display the radio button HTML for you #}
+        {{ form.as_p }}
+        {# You'll need a submit button or similar here to actually send the form #}
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+
+<!-- 
+    <div class="container">
+      <table class="table table-striped">
+          <thead>
+            <tr>
+            <th>IDs</th>
+            <th>E_Published_Date</th>
+            <th>Closing_Date</th>
+            <th>Opening_Date</th>
+            <th>Ref_NO</th>
+            <th>Tender_ID</th>
+            <th>Organisation_Chain</th>
+            <th>Tender_URL</th>
+            <th>Tender_Title</th>               
+            </tr>
+          </thead>
+          <tbody> -->
+        {% for stud in student %}  
+
+            <!-- ORM -->
+            <!-- <tr>
+              <td>{{stud.IDs}}</td>
+              <td>{{stud.E_Published_Date}}</td>
+              <td>{{stud.Closing_Date}}</td>
+              <td>{{stud.Opening_Date}}</td>
+              <td>{{stud.Organisation_Chain}}</td>
+              <td>{{stud.Tender_Title}}</td>
+              <td>{{stud.Ref_NO}}</td>
+              <td>{{stud.Tender_ID}}</td>
+              <td><a href=""></a>{{stud.Tender_URL}}</td>
+            </tr> -->
+
+            <!-- Query -->
+            <!-- <tr>
+              <td>{{stud.IDS}}</td>
+              <td>{{stud.E_PUBLISHED_DATE}}</td>
+              <td>{{stud.CLOSING_DATE}}</td>
+              <td>{{stud.OPENING_DATE}}</td>
+              <td>{{stud.REF_NO}}</td>
+              <td>{{stud.TENDER_ID}}</td>
+              <td>{{stud.ORGANISATION_CHAIN}}</td>
+              <td>{{stud.TENDER_URL}}</td>
+              <td>{{stud.TENDER_TITLE}}</td>
+            </tr> -->
+
+    
+              <div>
+              <table>
+              <tbody>
+                  <tr>
+                      <td><b>Organisation Chain</b></td>
+                      <td >{{stud.ORGANISATION_CHAIN}}</td>
+                  </tr>
+      
+                  <tr>
+                      <td ><b>Tender Reference Number</b></td>
+                      <td >{{stud.REF_NO}}</td>
+                  </tr>
+                  <tr>
+                      <td ><b>Tender Title<b></b></td>
+                      <td >{{stud.TENDER_TITLE}}</td>
+                  </tr>
+                  <tr>
+                      <td ><b>TENDER URL</b></td>
+                      <td ><a href = {{stud.TENDER_URL}}  target="_blank">{{stud.TENDER_URL}}</a></td>
+                      <td ><b>Tender Id</b></td>
+                      <td >{{stud.TENDER_ID}}</td>
+                  </tr>
+                  <tr>
+                      <td ><b>E PUBLISHED DATE</b></td>
+                      <td >{{stud.E_PUBLISHED_DATE}}</td>
+                      <td ><b>OPENING DATE</b></td>
+                      <td >{{stud.OPENING_DATE}}</td>
+                  </tr>
+                  <tr>
+                      <td ><b>CLOSING_DATE</b></td>
+                      <td >{{stud.CLOSING_DATE}}</td>
+                      <td ><b>ID</b></td>
+                      <td >{{stud.IDS}}</td>
+                  </tr>        
+      
+        </tbody>
+      </table>
+      <br>
+      <br>	
+      {% endfor %} 
+      </div>
+  </div>
+ 
+
+
+
+
+</body>
+</html>

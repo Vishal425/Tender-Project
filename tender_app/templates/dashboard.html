@@ -1,0 +1,528 @@
+
+<!DOCTYPE html>
+<html lang="en"> 
+<!-- #r###################tender######################### -->
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- ############################################# -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  * {box-sizing: border-box;}
+  
+  
+  body {
+    /* margin: 0; */
+    margin-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #aac8ce;
+    overflow: hidden;
+    background: #8c5799;
+    position: fixed;
+    top: 0;
+    width: 75%;  
+    margin-left: 24%;
+    
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: rgb(101, 174, 192);
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #ede6f5;
+    color: white;
+  }
+  
+  .topnav input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+  }
+  
+  .topnav .search-container button {
+    /* float: right; */
+    padding: 6px 10px;
+    /* margin-top: 8px; */
+    /* margin-right: 20px; */
+    background: rgb(223, 140, 223);
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .topnav .search-container button:hover {
+    background: rgb(200, 208, 228);
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav .search-container {
+      float: none;
+    }
+    .topnav a, .topnav input[type=text], .topnav .search-container button {
+      float: none;
+      display: block;
+      text-align: left;
+      width: 100%;
+      margin: 0;
+      padding: 14px;
+    }
+    .topnav input[type=text] {
+      border: 1px solid rgb(7, 7, 7);  
+    }
+  }
+  </style>
+  </head>
+  <body>
+  
+  <div class="topnav">
+    <div> 
+    <!-- <a class="active" href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a> -->
+    <div style="margin-left: 62%;" class="search-container search_fixed">
+      <form action="{% url 'search' %}">
+        <input type="text" placeholder="Search...." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+   
+    <div style="margin-left: 91%;margin-top: -40px;">
+      <button type="button" class="btn-group btn-group-sm"> 
+          <a href="/"><span class="glyphicon glyphicon-log-out" style="float: right;"></span></a>
+        </button>
+    </div>   
+
+    </div> 
+    
+  </div>
+  </body>
+
+<!-- ########################################### -->
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>tender</title>
+<style type="text/css">
+ * {
+margin:0px;
+padding:0px;
+border:none;
+outline:none;
+}
+body {
+font-family: 'Montserrat', sans-serif;
+font-size:13px;
+color:#303030;
+line-height:1.7em;
+font-weight:400;
+background:#ffffff;
+-webkit-font-smoothing: antialiased;
+-moz-font-smoothing: antialiased;
+}
+.btn-secondary{
+  background: #0a5c95;
+}
+/* nav */
+row{
+  width: 100%;
+}
+nav {
+position: relative;
+margin: 50px;
+width: 360px;
+}
+nav ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+nav ul li {
+/* Sub Menu */
+}
+nav ul li a {
+display: block;
+background: #ebebeb;
+padding: 10px 15px;
+color: #333;
+text-decoration: none;
+-webkit-transition: 0.2s linear;
+-moz-transition: 0.2s linear;
+-ms-transition: 0.2s linear;
+-o-transition: 0.2s linear;
+transition: 0.2s linear;
+}
+nav ul li a:hover {
+background: #f8f8f8;
+color: #515151;
+}
+nav ul li a .fa {
+width: 16px;
+text-align: center;
+margin-right: 5px;
+float:right;
+}
+nav ul ul {
+background-color:#ebebeb;
+}
+nav ul li ul li a {
+background: #f8f8f8;
+border-left: 4px solid transparent;
+padding: 10px 20px;
+}
+nav ul li ul li a:hover {
+background: #ebebeb;
+border-left: 4px solid #3498db;
+}
+.keywords_title a{  padding-left: 12%; 
+  font-size: 18px; 
+  color:#0a5c95;}
+
+.fa-caret-down, .fa-caret-up{ 
+  position: absolute;
+  right:79%;
+}
+
+/* nav end */
+.top_header{
+background: #fff;
+box-shadow: 5px 2px 2px #eee;
+padding: 10px 0;
+}
+.logo_left{ margin-left: 35px; }
+
+
+.logo{
+  display: block;
+  float: left;
+  top: 60px; 
+  /* position: fixed; */
+}
+.top_right_side{ 
+  display: block;
+  float: right;
+  right: 0;
+  width: 12%;
+  position: absolute;
+}
+.mr_right{ 
+  margin-top: 20px;
+  right: 0;
+  position: absolute;
+}
+.logout_name{ 
+  margin-left:10px;
+  font-size: 18px;
+  font-weight: 600;
+  color:#222;
+}
+.top_right_side img{
+  width: 30px;
+}
+.logout_name:hover{
+  color:#03459e;
+}
+a:hover{
+  text-decoration: none;
+}
+.list{
+  padding: 0 15px;
+}
+.keywords_title{
+  color: #222;
+  padding: 10px 5px;
+  width: 100%;
+}
+.left_side_item{
+background: rgb(255, 255, 255);
+box-shadow: 5px 2px 2px #eee;
+height: 100vh;
+width:25%;
+/* overflow: scroll; */
+top: 0px;
+height: 85%;
+padding-top: 10px;
+position: fixed;
+}
+.list_side_item  li{  
+  list-style: none;
+}
+.list_side_item label{
+  display: flex;
+}
+.middle_box{
+  display: block;
+  float: left;
+  padding: 23px 10px 0px 90px;
+  width: 415px;
+}
+.list{
+  padding-left: 35px;
+  padding-top: 15px;
+}
+.submit_fixed{ 
+  width: 24.6%;
+  height: 10%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #dcedfb;
+ 
+}
+.submit_btn , .clear_btn{
+  padding: 10px 40px; 
+  background: #0a5c95;
+  border-radius: 5px;
+  color:#fff;
+  margin: 20px 10px;
+  display: block;
+  float: left;
+  border:none;
+
+}
+.group_btn{ 
+ text-align: center;
+ display: table;
+ margin: auto;
+}
+input[type=checkbox]{
+  margin-right: 10px;
+  margin-top: 8px;
+  min-width: 20px;
+  
+} 
+.main_container{
+  width: 75%;
+  margin: 30px;
+  position: absolute;
+  height: 650px;
+  overflow: scroll;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+.table_box{
+  margin-bottom: 10px;
+}
+.table .thead-dark th{
+  background: #0a5c95;
+  color : #fff;
+  padding: 4px;
+}
+.table-responsive{
+  display: inline-table;
+}
+.hidden-bar-wrapper{
+overflow-x: hidden;
+}
+td th{
+  padding: 10px;
+}
+.table-responsive{
+width: 100%;
+margin-bottom: 20px;
+}
+.table_bg{
+  position: relative;
+  padding-bottom: 20px;
+  border-bottom:1px solid rgb(170, 170, 170);
+}
+
+@media only screen and (max-width: 767px){
+  .logo img{
+      width: 200px;
+  }
+  .top_header, .left_side_item{
+      width: 100%;
+  }
+  .top_right_side{
+      width: 31%;
+      margin-top: 25px;
+  }
+  .top_header{
+      box-shadow: none;
+  }
+  .middle_box{
+      padding: 13px 20px 10px 38px;
+  }
+ 
+  /* .table_responsive{
+    overflow: scroll;
+  } */
+
+.submit_fixed{
+  width: 100%;
+  position: fixed;
+  bottom: 60px; 
+}
+.table-responsive{
+  display: block;
+}
+.sh2 {
+text-align: left;
+}
+
+.section {
+  /* max-height: 100%; */
+  margin-top: 45px;
+  padding: 1rem;
+  overflow-y: auto;
+  direction: ltr;
+  scrollbar-color: #d4aa70 #e4e4e4;
+  scrollbar-width: thin;
+    }
+
+
+.section::-webkit-scrollbar {
+  width: 20px;
+  margin-top: 45px;
+}
+
+.section::-webkit-scrollbar-track {
+  background-color: #e4e4e4;
+  border-radius: 100px;
+  margin-top: 45px;
+}
+
+.section::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  border: 6px solid rgba(0, 0, 0, 0.18);
+  border-left: 0;
+  border-right: 0;
+  background-color: #8070d4;
+  margin-top: 45px;
+}
+
+}
+</style>
+</head>
+
+<body class="hidden-bar-wrapper" >
+<main>    
+  <div class="container-fluild">
+    <div class="row">
+      
+        <div class="left_side_item">
+          <div style="height: 100%;">
+            <div class="logo_left" style="height: 10%;overflow: none;">
+              <a href="https://vgipl.com" target="_blank"> <img src="https://vgipl.com/images/email_nidhi/vgipl_logo.png" width="200px;" style="display:block; margin:auto;position: fixed;"></a> 
+              </div>  
+<br>
+              <div style="height: 90%;overflow: auto;">
+                <ul class="list_side_item" style="margin-top: 30px;"> 
+                  <a style="font-weight:bold;font-size:15px" href="{% url 'keyword' %}">Keyword</a>           
+                  <!-- <a style="font-weight:bold;font-size:15px;" href="{% url 'keyword' %}">Keyword</a>   -->
+                  <!-- <a style="font-weight:bold;font-size:15px;margin-left:200px" href="{% url 'search' %}">Search</a> -->
+                  
+                  <form action="" method="post">
+                  <br>
+                      {% csrf_token %}
+                      {# This will display the radio button HTML for you #}
+                      {{ form.as_p }}
+        
+                      {# You'll need a submit button or similar here to actually send the form #}
+                      <!-- <input type="submit" value="Submit"> -->             
+                      
+                      <div class="submit_fixed"> 
+                          <div class="group_btn"> 
+                    
+                              <input type="submit"  class="submit_btn" value="Submit"> 
+        
+                           </div>
+                        </div>
+                    </form>
+                    
+                  </ul>
+              </div>
+          </div>
+         
+          <!-- <br> -->
+            
+      
+        </div>
+        
+     
+
+        <div class="section" style = "position:absolute;left:350px;height:90%;width: 74.40%;margin-top: 46px; overflow: auto;">
+        <!-- <div style = "position:relative;left:310px;height:650px;">
+          
+        <div style="margin-left:5px;display:flex;padding:5px"> -->
+        <div>
+   {% for stud in student %}
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="1" class="table_bg">
+            <tbody><tr>
+                <td class="td_caption"><b>Organisation Chain</b></td>
+                <td class="td_field" colspan="5">{{stud.ORGANISATION_CHAIN}}</td>
+            </tr>
+                  
+            <tr>
+                <td class="td_caption"><b>Tender Reference Number</b></td>
+                <td colspan="3" class="td_field">{{stud.REF_NO}}</td>
+            </tr>
+            <tr>
+                <td class="td_caption"><b>Tender Title<b></b></td>
+                <td colspan="3" class="td_field">{{stud.TENDER_TITLE}}</td>
+            </tr>
+            <tr>
+                <td class="td_caption" width="25%"><b>Tender Url</b></td>
+                <td class="td_field" width="25%"><a href ={{stud.TENDER_URL}}>{{stud.TENDER_URL}}</a></td>
+                <td class="td_caption" width="25%"><b>Tender Id</b></td>
+                <td class="td_field" width="25%">{{stud.TENDER_ID}}</td>
+            </tr>
+            <tr>
+                <td class="td_caption"><b>E Published Date</b></td>
+                <td class="td_field">{{stud.E_PUBLISHED_DATE}}</td>
+                <td class="td_caption" width="20%"><b>Opening Date</b></td>
+                <td class="td_field" width="20%">{{stud.OPENING_DATE}}</td>
+            </tr>
+            <tr>
+                <td class="td_caption"><b>Closing Date</b></td>
+                <td class="td_field">{{stud.CLOSING_DATE}}</td>
+                <td class="td_caption"><b>ID</b></td>
+                <td class="td_field">{{stud.IDS}}</td>
+            </tr>
+        </tbody>
+        </table>
+        
+        <br>
+    {% endfor %} 
+    </div>
+    </div>
+  </div>
+  </div>
+
+
+</main>
+<!-- Main layout -->
+
+</body>
+
+<!-- Footer -->
+<footer id="page-footer">
+
+</footer>
+</body>
+
+
+
+
+</html>

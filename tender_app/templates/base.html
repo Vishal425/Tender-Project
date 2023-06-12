@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+  *{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box
+}
+body{
+  font-size: 10px;
+  font-family: 'Poppins';
+}
+
+h1{
+  text-align: center;
+  background-color: rgba(0,0,0,0.2);
+  color: rgba(0,0,0,0.7);
+  padding: 1em;
+  font-size: 3.6em;
+}
+h2, h4{
+  color: rgba(0,0,0,0.7);
+  text-transform: capitalize;
+}
+#more{
+  display: none;
+}
+.container{
+  margin: 1em;
+  display: flex;
+  flex-wrap: wrap;
+}
+.box{
+  text-align: justify;
+  flex: 1;
+  padding: 1em;
+  font-size: 1.8em;
+  min-width: 30em; 
+}
+.box p {
+  /*min-width: 33%; /*set min width or let flex and wrap do the job ? */
+}
+.box ul {
+  list-style: circle inside; /*shorthand property (type-position-image__url)*/
+}
+.box ul span {
+  font-weight: 600;
+}
+
+.example__box{
+  background-color: rgba(147, 210, 247, 0.5);
+}
+.bad__say{
+  border: 1px dashed black;
+}
+.bold{
+  font-weight: 600;
+}
+
+@media screen and (max-width: 480px){
+  h1, h2{
+    font-size: 1.2em;
+  }
+  
+  .box{
+    font-size: 1.2em;
+    min-width: 15em;}
+}
+</style>
+</head>
+<body style="background-color: rgb(209, 120, 205);">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;900&display=swap" rel="stylesheet"> 
+  <h1>Tender</h1>
+  
+  
+  <!--INTRODUCTION-->
+  
+  <div class='container'>
+   
+  <div class='box' >
+    <h2 style="color: rgb(107, 83, 214);">MORE THAN
+      A TENDER
+      PORTAL</h2>
+    <p>TENDER247 PORTAL <a href='https://www.tender247.com/' target='_blank'>read more</a>  It doesn't look so complicated but there are a few new points to develop, particularly with javascript part.</p>
+    <p>At this point :</p>
+    <ul>
+      <li>explain js part</li>
+      <li>how react buttons if I do 3 boxes with text and same button references ? Is it linked ton only one id - it is the hypothesis</li>
+      <li>can I put the button on another place ?</li>
+      <li>can I put some effects on the spreading of the box ? </li>
+      <li>what happens if I put some designs like border on box, how box reacts with movement</li>
+      <li>how make the all responsive ?</li>
+    </ul>
+    </div>
+    
+    <div class='box'>
+      <h2>where to start ?</h2>
+      <p>I plan different sections with attempts and descriptions. I'm a messy-minded so starting by a plan is always a good step.</p>
+      <p>What are the elements here ? What are links between things ?
+      How does it work ? How to use right terms in right contexts ?</p>
+      <p><span class='bold'>I put some sentence parts into dashed boxes because </span>I think it's not the right way to say the thing and I'm searching better way to say that but, one thing at a time fury.</p>
+    </div>
+    
+  </div><!--end of container-->
+  
+  <!--SECOND PART-->
+  <div class='container'>
+    
+      <div class='box example__box'>
+        <h2>example</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots">...</span>
+    <span id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+  <button onclick="myFunction()" id="myBtn">Read more</button>
+    </div><!--end of box div-->
+    
+    <div class='box'>
+      <h2>description</h2>
+      <p> So, we have the beginning of a text which is finished by ellipsis points.
+        Click on the read more button, what happens ? The box expands and the entire text appears.
+        Look at the button text content modification, now we can read 'read less'</p>
+      <p>Notice how the button <span class='bad__say'>is able to execute 2 actions </span>: expand and reduce the visible content into the box</p>
+    </div>
+    
+      <div class='box'>
+        <h2>stuff into</h2>
+        <p>What are the tags used in ?</p>
+        <ul>
+          <li>We have a <span>div<span></li>
+          <li>Into this div, we have : a <span>paragraph</span> tag which contains the text and <span>2 span</span> parts. We have also, lastly, a <span>button</span> tag.</li>
+          <li>Notice how the 2 span parts and button have an <span>id</span>, it's related to javascript</li>
+          <li>Also notice the fact that the expansion of the box has no influence on under content</li>
+        </ul>
+      </div><!--end of box-->
+     </div><!--end of container-->   
+        
+    
+    <!--CODING part-->
+    
+    <div class='container'>
+      
+        <div class='box'>
+          <h2>HTML</h2>
+          <code>insert this part when cleaned</code>
+        </div>
+        
+        <div class='box'>
+          <h2>CSS</h2>
+          <code>insert this part when cleaned</code>
+          <p>CSS part is the simpliest and contains only one line which is relative to the span with the 'more' id.
+                The idea is that the span part which contains the part of the text which will expand is not displayed.
+        </div>
+        </div><!--end of container-->
+  
+    <div class='container js__container'>
+        <div class='box'>
+          <h2>JS</h2>
+           <code>insert this part when cleaned</code>
+           <p>Isn't it the most exciting part ? I'm still a very early beginner so I suppose that I couldn't answer all of         questions but well I'm not sure if there is an interest to list them but maybe to don't go too deeper into shadow...
+          I find it easier to divide big problem into little ones so how can we achieve that on the javascript code part?</p>
+          
+          <h3>function</h3>
+          
+          <p>It is the first line of JS code. It asks to create a function called <code><pre>'myFunction()'</pre></code> which is related to button
+          onclick action set into the HTML part. In brief, when you click on the button, it calls the function and, by extent
+          all elements which constitutes it. You can adapt the name but don't forget to adapt it into HTML part too</p>
+          
+          <h3>variables</h3>
+          <p>time to set the variable will be on work in the script. There are 3 : 
+            <ul>
+              <li>dots : first span, contains ellipsis points</li>
+              <li>moreText : second span, contains the text which is not displayed yet</li>
+              <li>btnText : button part with alternated text (read more or less)</li>
+          </ul>
+          If you remember the html part, it is why <span class='bold'>id</span> occur. You define a variable name that you'll use into the js loop and this variable is related to a part from the html. </p>
+      <h3>if else loop</h3>
+      <p>Okay here we are, tricky part ! The if else loop ! 
+  It asks the function to do something if defined criterion are met and something else if 
+  criterion aren't met. So in this case : </p>
+  <h4>if ()</h4>
+  <p>if dots part is not 'none', in other words if dots part is displayed then do : 
+    <ul>
+      <li>display dots part inline</li>
+      <li>button has 'read more' text</li>
+      <li>the text to extend is not displayed</li>
+    </ul>
+  So, this part is the part where we start. In deed, it is the current situation when you arrive on the page.
+  We can say that this part is the <span class='bold'>'initial state'</span>.</p>
+    <h4>else</h4>
+    <p>The second part <span class='bad__say'>sets the conditions of changes </span>and come from the onclick action on button.
+  What is the state of stuff when read more is deployed ? ellipsis points (dots) are not anymore displayed and
+  replaced by text which is now displayed. On the button, it is not anymore 'read more' but 'read less'.
+  The added text id displayed inline</p> 
+  
+        </div>
+  
+  <div class='box'>
+  </div>
+      </div><!--end of container-->
+  
+  
+</body>
+</html>
+
+<script>
+  function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less";
+    moreText.style.display = "inline";
+  }
+}
+</script>

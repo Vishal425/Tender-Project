@@ -1,0 +1,170 @@
+<html>
+ 
+<head>
+  <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+ 
+* {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  /* background: white url("images/sample.jpg") no-repeat; */
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #7c6c80;
+ 
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: rgb(175, 99, 162);
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #dda7d0;
+  color: rgb(255, 255, 255);
+}
+
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+
+}
+</style>
+</head>
+<body>
+  
+<div class="topnav">
+  
+  <div style="float: right;">
+    <a style="font-size: 25px;" href="{% url 'login_url' %}" ><button class="button button2">Login</button> </a>
+    <!-- <a style="font-size: 25px;" href="{% url 'register_url' %}">  <button class="button button2">Register</button></a> -->
+</div>
+  <a class="active" style="margin-top: 15px;"  href="#home" >Home</a>
+  <a style="margin-top: 15px;" href="#about" >About</a>
+  <a style="margin-top: 15px;"  href="#contact">Contact</a>
+  <div class="search-container">
+    <!-- <form action="{% url 'search' %}">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form> -->
+  </div>
+</div>
+</body>
+    <title>Registration</title>
+    <style>
+        .button {
+          background-color: #4CAF50; /* Green */
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+         
+          cursor: pointer;
+        }
+        
+        .button2 {background-color: #b689b6;} /* Blue */
+        .button3 {background-color: #f44336;} /* Red */ 
+        .button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+        .button5 {background-color: #555555;} /* Black */
+        </style>
+
+</head>
+ 
+<body>
+
+
+  <h1><marquee behavior="alternate" style="position: fixed; color: rgb(228, 181, 207); font-style: italic;" >TENDER PROJECT.........</marquee></h1>
+  <!-- <h1 style="color:blue;">Tender project........ </h1> -->
+  {% load static %}
+  <img src ="{% static 'images/sample.jpg' %}">
+
+  <!-- <div id="header">
+    <div class="centered">
+      <form action="{% url 'search' %}">
+        <input type="text" placeholder="Enter keyword,i.e. Road tender.. ">
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+  </div> -->
+  
+    <nav class="navbar navbar-light" style="background-color:#f0a17c;"></nav>
+    {% block content %}
+  
+<!-- 
+        <h1 style="color:blue;">Tender project........ </h1> -->
+        {% if user.is_authenticated %}
+        <!-- <div style="float: right;">
+          <a style="font-size: 25px;" href="{% url 'login_url' %}" ><button class="button button2">Login</button> </a>
+          <a style="font-size: 25px;" href="{% url 'register_url' %}">  <button class="button button2">Register</button></a>
+      </div> -->
+             <!-- <a href="{% url 'logout' %}">Logout</a> -->
+        <!-- {% else %}
+
+        <a href="{% url 'logout' %}">Logout</a> -->
+        <!-- <div style="float: right;">
+            <a style="font-size: 25px;" href="{% url 'login_url' %}" ><button class="button button2">Login</button> </a>
+            <a style="font-size: 25px;" href="{% url 'register_url' %}">  <button class="button button2">Register</button></a>
+        </div> -->
+
+        {% endif %}
+    {% endblock %}
+</body> 
+
+</html>
